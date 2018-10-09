@@ -1,6 +1,3 @@
-/**
- * 
- */
 package demo.command.chain;
 
 import java.io.File;
@@ -12,12 +9,11 @@ import demo.Common;
 import demo.command.Chdir;
 import demo.command.GitClone;
 import demo.command.GitLog;
+import demo.command.GitPull;
 
 /**
  * This class define the command chain to obtain the commit history
- * 
  * @author fernandojribeiro
- *
  */
 public class CommitHistory extends CommandChain {
 	String repoPath;
@@ -68,6 +64,12 @@ public class CommitHistory extends CommandChain {
 						new GitClone(repoUrl).getCommand(),
 				};
 				executeCommands(cloneCommands);
+			} else {
+				String[] pullCommands = {
+						new Chdir(repoFullPath).getCommand(),
+						new GitPull().getCommand(),
+				};
+				executeCommands(pullCommands);
 			}
 
 			GitLog gitlog = new GitLog();

@@ -20,5 +20,4 @@ public class GitLog extends Command {
 	public void beforeDate(String date) {
 		this.arguments += " --until=" + date;
 	}
-	
 }
