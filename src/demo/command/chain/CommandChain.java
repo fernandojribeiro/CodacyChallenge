@@ -1,6 +1,3 @@
-/**
- * 
- */
 package demo.command.chain;
 
 import java.io.BufferedReader;
@@ -10,7 +7,6 @@ import demo.Common;
 
 /**
  * This abstract class define the command chains.
- * 
  * @author fernandojribeiro
  */
 public abstract class CommandChain {
@@ -18,7 +14,6 @@ public abstract class CommandChain {
 
 	/**
 	 * Abstract method to define the command chain to execute.
-	 * 
 	 * @author fernandojribeiro
 	 * @return the return status of the executed command chain
 	 */
@@ -26,7 +21,6 @@ public abstract class CommandChain {
 
 	/**
 	 * Execute the command chain.
-	 * 
 	 * @author fernandojribeiro
 	 * @return the command line output of the executed command chain
 	 */

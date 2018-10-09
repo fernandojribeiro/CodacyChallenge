@@ -1,0 +1,60 @@
+2018-10-09T11:15:01.153+0100 :: INFO :: demo.api.RestInterface :: Commit REST API listening [Port: 8888, Min Threads: 2, Max Threads: 8, Request Timeout: 30000]...
+2018-10-09T11:15:09.394+0100 :: DEBUG :: demo.api.RestInterface :: Rest API Request: http://localhost:8888/commits?beforeDate=2018.10.09&maxCount=10
+2018-10-09T11:15:09.403+0100 :: INFO :: demo.command.chain.CommandChain :: Command to execute [1]: cmd /c cd C:\Work\Demo\CommitViewer2\CommitViewer
+2018-10-09T11:15:09.404+0100 :: INFO :: demo.command.chain.CommandChain :: Command to execute [2]: git pull 
+2018-10-09T11:15:09.404+0100 :: DEBUG :: demo.command.chain.CommandChain :: Command prompt input: cmd /c cd C:\Work\Demo\CommitViewer2\CommitViewer && git pull 
+2018-10-09T11:15:11.086+0100 :: DEBUG :: demo.command.chain.CommandChain :: Command Output: Already up to date.
+2018-10-09T11:15:11.112+0100 :: INFO :: demo.command.chain.CommandChain :: Command to execute [1]: cmd /c cd C:\Work\Demo\CommitViewer2\CommitViewer
+2018-10-09T11:15:11.113+0100 :: INFO :: demo.command.chain.CommandChain :: Command to execute [2]: git log --pretty=format:"%h;%an;%ae;%ad;%ar;%s" --max-count=10 --until=2018.10.09
+2018-10-09T11:15:11.113+0100 :: DEBUG :: demo.command.chain.CommandChain :: Command prompt input: cmd /c cd C:\Work\Demo\CommitViewer2\CommitViewer && git log --pretty=format:"%h;%an;%ae;%ad;%ar;%s" --max-count=10 --until=2018.10.09
+2018-10-09T11:15:11.431+0100 :: DEBUG :: demo.command.chain.CommandChain :: Command Output: 4ae4fad;fernandojribeiro;fernando.jribeiro@gmail.com;Tue Oct 9 11:10:38 2018 +0100;5 minutes ago;A lot of new stuff
+2018-10-09T11:15:11.432+0100 :: DEBUG :: demo.command.chain.CommandChain :: Command Output: aafecdf;fernandojribeiro;fernando.jribeiro@gmail.com;Tue Oct 9 09:31:17 2018 +0100;2 hours ago;A lot of things done
+2018-10-09T11:15:11.445+0100 :: DEBUG :: demo.command.chain.CommandChain :: Command Output: b4da556;fernandojribeiro;fernando.jribeiro@gmail.com;Sat Oct 6 16:44:08 2018 +0100;3 days ago;Initial commit
+2018-10-09T11:15:11.448+0100 :: DEBUG :: demo.command.mvc.CommitControler :: List of Commits:
+	Short Hash: 4ae4fad
+	Author Name: fernandojribeiro
+	Author Email: fernando.jribeiro@gmail.com
+	Author Date: Tue Oct 9 11:10:38 2018 +0100
+	Author Relative Date: 5 minutes ago
+	Subject: A lot of new stuff
+
+List of Commits:
+	Short Hash: aafecdf
+	Author Name: fernandojribeiro
+	Author Email: fernando.jribeiro@gmail.com
+	Author Date: Tue Oct 9 09:31:17 2018 +0100
+	Author Relative Date: 2 hours ago
+	Subject: A lot of things done
+
+List of Commits:
+	Short Hash: b4da556
+	Author Name: fernandojribeiro
+	Author Email: fernando.jribeiro@gmail.com
+	Author Date: Sat Oct 6 16:44:08 2018 +0100
+	Author Relative Date: 3 days ago
+	Subject: Initial commit
+
+
+2018-10-09T11:15:11.490+0100 :: DEBUG :: demo.api.RestInterface :: Rest API Response: [ {
+  "shortHash" : "4ae4fad",
+  "authorName" : "fernandojribeiro",
+  "authorEmail" : "fernando.jribeiro@gmail.com",
+  "authorDate" : "Tue Oct 9 11:10:38 2018 +0100",
+  "authorRelativeDate" : "5 minutes ago",
+  "subject" : "A lot of new stuff"
+}, {
+  "shortHash" : "aafecdf",
+  "authorName" : "fernandojribeiro",
+  "authorEmail" : "fernando.jribeiro@gmail.com",
+  "authorDate" : "Tue Oct 9 09:31:17 2018 +0100",
+  "authorRelativeDate" : "2 hours ago",
+  "subject" : "A lot of things done"
+}, {
+  "shortHash" : "b4da556",
+  "authorName" : "fernandojribeiro",
+  "authorEmail" : "fernando.jribeiro@gmail.com",
+  "authorDate" : "Sat Oct 6 16:44:08 2018 +0100",
+  "authorRelativeDate" : "3 days ago",
+  "subject" : "Initial commit"
+} ]
+2018-10-09T11:15:11.490+0100 :: INFO :: demo.api.RestInterface :: Great Job!
