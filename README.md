@@ -19,4 +19,3 @@ Steps:
   Parameter beforeDate: the date until the commits will be showned
   Paramenter maxCount: the total number of commits to return
   Example: http://localhost:8888/commits?beforeDate=2018.10.09&maxCount=10
-  
