@@ -13,8 +13,9 @@ Steps:
     - api.maxThreads: Max threads for the commit api listener (no need to change this)  
     - api.timeoutMillis: Timeout in milliseconds for the commit api listener (no need to change this)
     - api.port: Port listening for the commit api
-2. Run the Main class in eclipse
-3. Invoke the WebService (e.g. in browser) adjusting the following parameters to control payload
+2. Copy the files log4j2.xml and config.properties to the folder target\classes
+3. Run the Main class in eclipse
+4. Invoke the WebService (e.g. in browser) adjusting the following parameters to control payload
   REST API: http://localhost:8888/commits
   Parameter beforeDate: the date until the commits will be showned
   Paramenter maxCount: the total number of commits to return
