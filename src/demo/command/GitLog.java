@@ -13,11 +13,11 @@ public class GitLog extends Command {
 		this.arguments = ARGUMENTS;
 	}
 	
-	public void maxCount(int number) {
-		this.arguments += " --max-count=" + number;
+	public void sinceDate(String date) {
+		this.arguments += " --since=" + date;
 	}
 	
-	public void beforeDate(String date) {
+	public void untilDate(String date) {
 		this.arguments += " --until=" + date;
 	}
 }

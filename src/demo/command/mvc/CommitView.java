@@ -15,9 +15,8 @@ public class CommitView {
 	 * @param commits the object to print
 	 */
 	public String printCommits(ArrayList<Commit> commits) {
-		String message = "";
+		String message = "\nList of Commits:\n";
 		for(Commit commit : commits) {
-			message += "List of Commits:\n";
 			message += "\tShort Hash: " + commit.getShortHash() + "\n";
 			message += "\tAuthor Name: " + commit.getAuthorName() + "\n";
 			message += "\tAuthor Email: " + commit.getAuthorEmail() + "\n";

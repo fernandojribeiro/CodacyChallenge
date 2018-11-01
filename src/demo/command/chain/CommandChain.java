@@ -39,21 +39,22 @@ public abstract class CommandChain {
 		    BufferedReader commandOutputReader = new BufferedReader(new InputStreamReader(process.getInputStream()));
 		    BufferedReader commandErrorReader = new BufferedReader(new InputStreamReader(process.getErrorStream()));
 
+		    // Wait for the end of the command and check if the command ended with success
+		    if(process.waitFor() == 0) {
+				output.setSuccess(true);
+		    } else {
+				output.setSuccess(false);
+		    }
+		    
 		    String commandOutputLine;
 		    while ((commandOutputLine = commandOutputReader.readLine()) != null) {
-	            output.AddOutputMessage(commandOutputLine);
-				output.setSuccess(true);
+		    	output.AddOutputMessage(commandOutputLine);
 				Common.getLogger().debug("Command Output: " + commandOutputLine);
 	        }
-		    
+
 		    String commandErrorLine;
 		    while ((commandErrorLine = commandErrorReader.readLine()) != null) {
-			    //TODO: Some commands sent to sterr some messages that are not errors, like git clone for example with message "Cloning into 'CommitViewer'...".
-		    	//TODO: This is a hammered solution to address this problem.
-				if(commandErrorLine.contains("error") || commandErrorLine.contains("fatal")) {
-					output.AddErrorMessage(commandErrorLine);
-					output.setSuccess(false);
-				}
+		    	output.AddErrorMessage(commandErrorLine);
 				Common.getLogger().error("Command Error: " + commandErrorLine);
 	        }
 		} catch (Exception e) {

@@ -3,10 +3,10 @@ package demo.command.mvc;
 import demo.command.chain.CommandOutput;
 
 /**
- * The interface for the controler
+ * The interface for the controller
  * @author fernandojribeiro
  */
-public interface CommandControler {
+public interface CommandController {
 	void parseOutput(CommandOutput output);	
 	
 	void updateView();

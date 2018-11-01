@@ -1,5 +1,6 @@
 demo
-demo.api
+demo.api.gateway
+demo.api.rest
 demo.command
 demo.command.chain
 demo.command.mvc

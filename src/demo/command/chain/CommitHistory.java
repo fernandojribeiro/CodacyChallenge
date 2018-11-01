@@ -20,8 +20,8 @@ public class CommitHistory extends CommandChain {
 	String repoName;
 	String repoUrl;
 	String repoFullPath;
-	String beforeDate;
-	int maxCount;
+	String untilDate;
+	String sinceDate;
 
 	public CommitHistory(Common common) {
 		this.repoName = common.getProperty(Common.REPO_NAME);
@@ -32,12 +32,12 @@ public class CommitHistory extends CommandChain {
 	}
 
 	/**
-	 * Define the Max Count for the git history
+	 * Define the Since Date for the git history
 	 * @author fernandojribeiro
-	 * @param number to define as max count
+	 * @param date to define as the until date
 	 */
-	public void maxCount(int number) {
-		this.maxCount = number;
+	public void sinceDate(String date) {
+		this.sinceDate = date;
 	}
 	
 	/**
@@ -45,8 +45,8 @@ public class CommitHistory extends CommandChain {
 	 * @author fernandojribeiro
 	 * @param date to define as the until date
 	 */
-	public void beforeDate(String date) {
-		this.beforeDate = date;
+	public void untilDate(String date) {
+		this.untilDate = date;
 	}
 
 	/**
@@ -73,8 +73,8 @@ public class CommitHistory extends CommandChain {
 			}
 
 			GitLog gitlog = new GitLog();
-			gitlog.maxCount(maxCount);
-			gitlog.beforeDate(beforeDate);
+			gitlog.sinceDate(sinceDate);
+			gitlog.untilDate(untilDate);
 
 			String[] commands = {
 					new Chdir(repoFullPath).getCommand(),
