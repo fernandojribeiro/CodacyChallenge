@@ -24,4 +24,4 @@ Steps:
   REST API: http://localhost:8888/commits
   Parameter untilDate: the date until the commits will be showned (format: yyyy-mm-dd)
   Paramenter maxCount: the total number of commits to return (format: yyyy-mm-dd)
-  Example: http://localhost:8888/commits?sinceDate=2018.09.09&untilDate=2018.11.09
+  Example: http://localhost:8888/commits?sinceDate=2018-09-09&untilDate=2018-11-09

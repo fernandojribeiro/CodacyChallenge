@@ -44,10 +44,13 @@ public class CommitController implements CommandController {
 		ObjectMapper jsonMapper = new ObjectMapper().enable(SerializationFeature.INDENT_OUTPUT);
 		
 		try {
-			if (!Common.isDateValid(untilDate, common.getProperty(Common.API_DATE_FORMAT)) || !Common.isDateValid(sinceDate, common.getProperty(Common.API_DATE_FORMAT))) {
+			if (Common.isEmpty(sinceDate) ||
+				Common.isEmpty(untilDate) ||
+				!Common.isDateValid(sinceDate, common.getProperty(Common.API_DATE_FORMAT)) ||
+				!Common.isDateValid(untilDate, common.getProperty(Common.API_DATE_FORMAT))) {
 				JSONObject json = new JSONObject();
 				json.put("ErrorCode", 400);
-				json.put("ErrorMessage", "Since and Until date is mandatory");
+				json.put("ErrorMessage", "Since and Until date is mandatory (format: " + common.getProperty(Common.API_DATE_FORMAT));
 				Common.getLogger().error("Something went wrong (api)!");
 				jsonString = json.toString();
 			} else {
