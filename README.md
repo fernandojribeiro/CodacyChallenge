@@ -2,8 +2,8 @@
 Assumptions:
 1. This program was executed in eclipse and is working in this condition
   TODO: Create an autonomous execution script
-2. TODO: Generalization exersise not completed
-3. Documentation is here: CommitViewer\doc\index.html
+2. Documentation is here: CommitViewer\doc\index.html
+
 Steps:
 1. Edit the target\classes\config.properties and adjust the properties
     - command.line.separator: The command line separator to execute multiple commands in one line (Windows: &&, Linux: ;)
